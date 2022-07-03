@@ -3,7 +3,7 @@ import Books from '../components/Books';
 import SearchBooks from '../components/SearchBooks';
 import data from '../data/books.json';
 
-const Home = () => {
+const Home = ({ data }) => {
   const inputRef = useRef(null);
   const [searchString, setSearchString] = useState('');
 
@@ -24,6 +24,14 @@ const Home = () => {
       />
     </>
   );
+}
+
+export async function getStaticProps() {
+  return {
+    props: {
+      data,
+    },
+  }
 }
 
 export default Home;
