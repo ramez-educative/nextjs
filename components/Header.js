@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { HiSun, HiMoon } from "react-icons/hi";

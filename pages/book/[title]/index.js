@@ -1,3 +1,4 @@
+import React from 'react';
 import data from '../../../data/books.json';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -7,6 +8,9 @@ import { useRouter } from 'next/router';
 const book = () => {
   const router = useRouter();
   const { title } = router.query;
+  if(!title) {
+    return <></>;
+  }
   const book = data.find(elem => elem.title === title);
 
   const rating = book.rating === 0 ? <ImSad className="w-7 h-7"/> : <><span className="text-yellow-700 dark:text-yellow-600">{book.rating}</span> out of 5</>; 
